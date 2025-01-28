@@ -6,6 +6,6 @@
 
 @layer base {
     body{
-        @apply px-14 py-4 bg-slate-800 text-3xl grid  place-items-center font-mono min-h-screen tracking-wide;
+        @apply px-14 py-4 dark:bg-slate-800 bg-slate-200 text-3xl grid  place-items-center font-mono min-h-screen tracking-wide;
     }
 }

@@ -12,7 +12,7 @@ const Results:FC<ResultsProps> = ({errors,accuracyPercentage,total,className}) =
     const animate = {opacity:1}
     const duration = {duration:0.5}
     
-    return <motion.ul className={`${className} text-primary-400 text-lg flex flex-col items-center space-y-3`}>
+    return <motion.ul className={`${className} dark:text-primary-400 text-green-500 text-lg flex flex-col items-center space-y-3`}>
         <motion.li 
             initial={initial}
             animate={animate}

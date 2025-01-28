@@ -6,6 +6,7 @@ export default {
     "./index.html"
   ],
   theme: {
+    
     extend: {
       colors:{
         primary:colors.yellow,
@@ -15,9 +16,11 @@ export default {
       },
       fontFamily:{
         'songfont':['"Noto Sans SC"']
-      }
+      },
+      
     },
   },
   plugins: [],
+  darkMode: 'class',
 }
 
