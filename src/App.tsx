@@ -9,7 +9,7 @@ function App() {
     <>
       <TimeLeft timeLeft={10} />
       <GenerateWords words={words} />
-      <RestartButton onRestart={() => null} className='mx-auto block text-slate-50'/>
+      <RestartButton onRestart={() => null} className='mx-auto block text-slate-500'/>
     </>
   )
 }
