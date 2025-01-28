@@ -354,6 +354,11 @@
     "@eslint/core" "^0.10.0"
     levn "^0.4.1"
 
+"@faker-js/faker@^9.4.0":
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-9.4.0.tgz#3e85604df3a318729436677565e9433d964276d2"
+  integrity sha512-85+k0AxaZSTowL0gXp8zYWDIrWclTbRPg/pm/V0dSFZ6W6D4lhcG3uuZl4zLsEKfEvs69xDbLN2cHQudwp95JA==
+
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@humanfs/core/-/core-0.19.1.tgz#17c55ca7d426733fe3c561906b8173c336b40a77"
@@ -1644,6 +1649,11 @@ react-dom@^18.3.1:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.2"
+
+react-icons@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.4.0.tgz#443000f6e5123ee1b21ea8c0a716f6e7797f7416"
+  integrity sha512-7eltJxgVt7X64oHh6wSWNwwbKTCtMfK35hcjvJS0yxEAhPM8oUKdS3+kqaW1vicIltw+kR2unHaa12S9pPALoQ==
 
 react-refresh@^0.14.2:
   version "0.14.2"
