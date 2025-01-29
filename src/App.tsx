@@ -6,20 +6,21 @@ import Results from '@/components/Results'
 import UserTyping from '@/components/UserTyping'
 import useEngine from '@/hooks/useEngine'
 import ToggleDarkMode from '@/components/ToggleDarkMode'
+import { calculateAccuracyPercentage } from './utils/calculate'
 function App() {
-  const {words,state,setState,updateWords,typed} =useEngine()
+  const {words,state,reset,typed,timeLeft,errorsCount,totalTyped} =useEngine()
   
 
   return (
     <>
       <ToggleDarkMode />
-      <TimeLeft timeLeft={10} />
+      <TimeLeft timeLeft={timeLeft} />
       <div className="relative break-all text-3xl max-w-xl">
         <GenerateWords words={words} />
         <UserTyping className="inset-0 absolute" words={words} inputWords={typed}/>
       </div>
-      <RestartButton onRestart={() => null} className='mx-auto  text-slate-500'/>
-      <Results errors={0} accuracyPercentage={100} total={10} className=''/>
+      <RestartButton onRestart={() => reset()} className='mx-auto  text-slate-500'/>
+      <Results state={state} errors={errorsCount} accuracyPercentage={calculateAccuracyPercentage(errorsCount,totalTyped)} total={totalTyped} className=''/>
     </>
   )
 }

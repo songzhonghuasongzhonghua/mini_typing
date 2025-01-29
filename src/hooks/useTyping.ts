@@ -4,7 +4,8 @@ export interface ITypingReturn {
     typed:string,
     cursor:number,
     totalTyped:number,
-    resetTyping:() => void
+    resetTyping:() => void,
+    cleanTyping:() => void
 }
 
 const useTyping =(enable:boolean):ITypingReturn => {
@@ -13,15 +14,14 @@ const useTyping =(enable:boolean):ITypingReturn => {
     const totalTyped = useRef(0)
 
     const handleKeyDown = (e:KeyboardEvent) => { 
-        
         if(!enable) return
         switch(e.key){
             case "Backspace":
                 setTyped((prev) => prev.slice(0,-1))
-                setCursor((prev) => prev - 1)
+                setCursor((prev) => Math.max(prev -1,0))
                 break;
             default:
-                if(e.code.startsWith("Key") || e.key === " "){
+                if(e.code.startsWith("Key") || e.key === " " || e.key === "-"){
                     setTyped((prev) => prev + e.key)
                     setCursor((prev) => prev + 1)
                     totalTyped.current += 1
@@ -31,6 +31,7 @@ const useTyping =(enable:boolean):ITypingReturn => {
         
     }
 
+
     useEffect(() => {
         window.addEventListener("keydown",handleKeyDown)
         return () => {
@@ -38,10 +39,17 @@ const useTyping =(enable:boolean):ITypingReturn => {
         }
     },[])
 
+
+
     const resetTyping = () => {
         setTyped("")
         setCursor(0)
         totalTyped.current = 0
+    }
+
+    const cleanTyping = () => {
+        setTyped("")
+        setCursor(0)
     }
 
     return {
@@ -49,6 +57,7 @@ const useTyping =(enable:boolean):ITypingReturn => {
         cursor,
         totalTyped:totalTyped.current,
         resetTyping,
+        cleanTyping
 
     }
 }
